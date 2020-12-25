@@ -1,0 +1,336 @@
+
+ $dfaPrimary: #3b89ff;
+ $dfaBd: #d9d9d9;
+/*
+ * shine-dfa样式，用颜色变量$dfaPrimary中: #3b89ff; $dfaBd: #d9d9d9
+ */
+ .header-container-primary {
+    background: #0A75FF;
+    background: -moz-linear-gradient(to right, #0A75FF 0%, #479BFF 100%);
+    background: -webkit-linear-gradient(to right, #0A75FF 0%, #479BFF 100%);
+    background: -o-linear-gradient(to right, #0A75FF 0%, #479BFF 100%);
+    background: -ms-linear-gradient(to right, #0A75FF 0%, #479BFF 100%);
+    background: linear-gradient(to right, #0A75FF 0%, #479BFF 100%);
+}
+.header-container .header-body {
+    height: 48px;
+    line-height: 48px;
+}
+.main-container{
+	height: calc(100vh - 48px);
+}
+.header-container .header-body .logout{
+	padding:0 6px;
+}
+.header-container .header-body .language-switch,
+.header-container .header-body .logout,
+.header-container .header-body .menu-item-primary a {
+    opacity: 1;
+}
+.header-container .header-body .menu-item-primary a:hover{
+	text-decoration: none;
+}
+.header-container .header-body .logout:hover,
+.header-container .header-body .menu-item:hover{
+	background-color: #1678F4;
+}
+.header-container .header-body li{
+	padding:0 6px;
+}
+.header-container .header-body .language-switch{
+	border: 0;
+	margin-top: 13px;
+}
+.next-overlay-wrapper .next-menu{
+	border: 1px solid #eee;
+	padding: 0;
+	min-width: 133px;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, .2);
+	border-radius: 0;
+}
+.next-menu-item:not(.next-disabled).next-focused, .next-menu-item:not(.next-disabled).next-selected.next-focused, .next-menu-item:not(.next-disabled).next-selected.next-focused:hover, .next-menu-item:not(.next-disabled).next-selected:focus, .next-menu-item:not(.next-disabled).next-selected:focus:hover, .next-menu-item:not(.next-disabled).next-selected:hover, .next-menu-item:not(.next-disabled):hover{
+	background-color: #F6F6F6;
+}
+.main-container .nav-title{ /*隐藏版本NACOS号*/
+	display: none;
+}
+/*左侧面板*/
+.main-container .left-panel{
+	width: 200px;
+    background-color: #202A3D;
+}
+.main-container .right-panel{
+	width: calc(100% - 200px);
+}
+.main-container .left-panel .nav-menu .next-menu-item-inner{
+	font-size: 14px;
+	color: #b2b2b2 !important;
+}
+
+.main-container .left-panel .next-menu-item{
+	border-left: 3px solid transparent;
+}
+.main-container .left-panel .nav-menu .current-path,
+.main-container .left-panel .next-menu-item:hover{
+	background-color: #141A2C;
+	border-left: 3px solid #5faaff;
+	height: 42px;
+}
+.main-container .left-panel .next-menu-item{
+	height: 42px;
+}
+.main-container .left-panel .next-menu-sub-menu-wrapper{
+	border-bottom: 1px solid #243147;
+}
+.main-container .left-panel .nav-menu .current-path .next-menu-item-text,
+.main-container .left-panel .nav-menu .next-menu-item:hover .next-menu-item-text{
+	color: #5faaff;
+}
+.main-container .left-panel .next-menu .next-menu-icon-arrow.next-icon{
+	color: #b2b2b2 !important;
+	right: 20px;
+	transform: scale(.5) rotate(90deg);
+}
+.main-container .left-panel .next-menu .next-menu-icon-arrow.next-icon.next-open{
+	transform: scale(.5) rotate(0);
+}
+.main-container .left-panel .next-menu .next-menu-icon-arrow.next-icon:before{
+	font-size: 22px;
+}
+.main-container .left-panel .next-menu-item:hover .next-menu-icon-arrow.next-icon{
+	color: #5faaff !important;
+}
+.next-form-item-label{
+	color: #333;
+}
+.next-form-item-label label{
+	font-weight: normal !important;
+	font-size: 13px;
+}
+.next-input.next-medium{
+	border: 1px solid $dfaBd;
+	height: 30px;
+}
+.next-pagination .next-pagination-item.next-current,
+.next-btn.next-btn-primary,
+.next-input.next-medium,
+.next-btn.next-medium{
+	border-radius: 4px;
+}
+.next-input:hover,
+.next-input.next-focus{
+	border: 1px solid $dfaBd;
+}
+.next-pagination .next-pagination-item.next-current,
+.next-btn.next-btn-primary{
+	background-color: $dfaPrimary;
+}
+.next-pagination .next-pagination-item.next-current:hover,
+.next-btn.next-btn-primary:hover{
+	background-color: #69A5FF;
+}
+.next-btn.next-medium{
+	height: 30px !important;
+	border: none !important;
+}
+.next-dialog-header{
+	border-bottom: 1px solid $dfaBd;
+}
+.next-btn.next-btn-normal{
+	border: 1px solid #ccc !important;
+}
+.next-dialog{
+	border: none;
+	border-radius: 6px !important;
+	box-shadow: 0 3px 9px rgba(0, 0, 0, .5) !important;
+}
+.next-overlay-wrapper .next-overlay-backdrop{
+	background-color: rgba(0, 0, 0, .5);
+}
+.next-table th{
+	background: #EFF0F3;
+}
+.next-table th,
+.next-table td{
+	border-right: 1px solid $dfaBd;
+	border-bottom: 1px solid $dfaBd;
+}
+.next-table-fixed{
+	border-bottom: 1px solid $dfaBd;
+}
+.next-table{
+	border-top: 1px solid $dfaBd;
+    border-left: 1px solid $dfaBd;
+}
+.next-table-row.hovered{
+	background-color: #E6F2FF !important;
+}
+.next-table th .next-table-cell-wrapper{
+	padding: 8px 16px !important;
+}
+.next-table td .next-table-cell-wrapper{
+	padding: 8px 16px !important;
+}
+.next-dialog-footer.next-align-right{
+	text-align: center;
+}
+.next-dialog-footer {
+	background: #F5F5F5;
+}
+.header-container .header-body .logout{
+	color: transparent !important;
+	position: relative;
+	margin-right: 10px !important;
+}
+.header-container .header-body .logout:before{
+	position: absolute;
+	top: 0;
+	left: 13px;
+	font-family: NextIcon;
+	content: "\e608";
+	font-size: 19px;
+	color: #fff;
+}
+.header-container .header-body .language-switch{
+	font-size: 18px;
+	margin-right: 10px;
+	margin-top: 14px;
+}
+.header-container .header-body .logo{
+	width: 212px;
+	height: 19px;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+/*登录*/
+.top-section .vertical-middle.product-area,
+.home-page > header.header-container{
+	display: none;
+}
+.top-section{
+	background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: top left !important;
+}
+.home-page .top-section .login-panel{
+	border-top: 7px solid #2978ff !important;
+    background-color: #fff !important;
+    border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 5px !important;
+	border-top-left-radius: 0 !important;
+	top: 25% !important;
+	right: 10% !important;
+	height: 320px !important;
+}
+.home-page .top-section .login-panel .next-btn.next-btn-normal{
+	height: 40px !important;
+	border-radius: 4px !important;
+	border: none !important;
+}
+.home-page .top-section .login-panel .login-form input{
+	height: 40px !important;
+}
+.home-page .top-section .login-panel .login-header{
+	margin-top: 20px !important;
+	font-size: 24px !important;
+    font-family: "微软雅黑";
+    font-weight: 700;
+	color: #51565d !important;
+	text-align: left;
+	padding-left: 45px;
+}
+.home-page .top-section .login-panel .login-form{
+	margin-top: 20px  !important;
+}
+.home-page .top-section .next-form-item .next-form-item-label{
+	line-height: 0px;
+}
+/*tab*/
+.namespacewrapper{
+	background-color: #fff !important;
+	padding: 0 !important;
+	position: relative;
+	border: none !important;
+}
+.namespacewrapper:after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: $dfaPrimary;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 0;
+	bottom: 0;
+}
+.namespacewrapper > div > div > div{
+	text-align: center !important;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	height: 30px;
+	line-height: 30px;
+}
+.namespacewrapper > div > div > div span[type="light"]{
+	border: 1px solid $dfaPrimary !important;
+	color: $dfaPrimary !important;
+	border-bottom: none !important;
+    display: block !important;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: #fff;
+	margin-right: 5px !important;
+	position: relative;
+	padding:0 15px;
+}
+.namespacewrapper > div > div > div span[type="light"]:after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	bottom: 1px;
+	left: 0;
+    right: 0;
+	z-index: 9;
+}
+.namespacewrapper > div > div > div span:not([style *= "rgb(102, 102, 102)"]){
+   display: none;
+}
+.namespacewrapper > div > div > div span[style *= "rgb(102, 102, 102)"]{
+   color: #00f;
+   border: none !important;
+   background-color: #F5F5F5;
+   color: #666 !important;
+}
+.namespacewrapper > div > div > div span[style *= "rgb(102, 102, 102)"]:after{
+	background: transparent !important;
+}
+.next-btn.next-btn-secondary{
+	color: $dfaPrimary !important;
+	border: 1px solid $dfaPrimary !important;
+	border-radius: 5px !important;
+	margin-left: 10px;
+}
+.next-btn.next-btn-secondary:hover{
+	color: #69A5FF !important;
+	background-color: #fff !important;
+}
+a,
+div[style *= "rgb(51, 205, 229)"]{
+	color: $dfaPrimary !important;
+}
+h3.page-title,
+h5[style *= "rgb(136, 183, 224)"],
+h3[style *= "rgb(0, 153, 204)"]{
+	border-left-color: $dfaPrimary !important;
+}
+/*switch*/
+.next-switch-on{
+	background-color: $dfaPrimary !important;
+}
+/*
+ * shine-dfa样式 end
+ */
