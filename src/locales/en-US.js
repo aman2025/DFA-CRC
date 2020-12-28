@@ -32,6 +32,8 @@ const I18N_CONF = {
     pleaseInputUsername: 'Please input username',
     pleaseInputPassword: 'Please input password',
     invalidUsernameOrPassword: 'invalid username or password',
+    passwordRequired: 'password should not be empty',
+    usernameRequired: 'username should not be empty',
   },
   MainLayout: {
     nacosName: 'NACOS',
@@ -251,8 +253,7 @@ const I18N_CONF = {
   },
   ConfigurationManagement: {
     questionnaire2: 'questionnaire',
-    ad:
-      'a ACM front-end monitoring questionnaire, the time limit to receive Ali cloud voucher details shoved stamp: the',
+    ad: 'a ACM front-end monitoring questionnaire, the time limit to receive Ali cloud voucher details shoved stamp: the',
     noLongerDisplay4: 'no longer display:',
     removeConfiguration: 'Delete Configuration',
     sureDelete: 'Are you sure you want to delete the following configuration?',
@@ -297,8 +298,7 @@ const I18N_CONF = {
     abortImport: 'Abort import',
     skipImport: 'Skip',
     overwriteImport: 'Overwrite',
-    importRemind:
-      'File upload will be imported directly into the configuration, please be careful!',
+    importRemind: 'File upload will be imported directly into the configuration, please be careful!',
     samePreparation: 'Same preparation',
     targetNamespace: 'Target namespace',
     conflictConfig: 'Conflict-detected configuration items',
@@ -332,6 +332,7 @@ const I18N_CONF = {
 	authFail: 'Auth failed',
 		configId: 'Data ID',
     applicationGroup: 'Group',
+    appNamenull: 'Group should not be empty',
   },
   NewConfig: {
     newListingMain: 'Create Configuration',
@@ -494,12 +495,13 @@ const I18N_CONF = {
     name: 'Namespace:',
     namespaceId: 'Namespace ID(automatically generated if not filled):',
     namespaceIdTooLong: 'The namespace ID length cannot exceed 128',
+    customNamespaceIdnull: 'The namespace ID cannot be empty',
+    customNamespaceIdPlaceholder: 'Please enter the namespace ID (Chinese is not allowed)',
     namespacenotnull: 'Namespace cannot be empty',
     namespacedescnotnull: 'Namespace description cannot be empty',
     description: 'Description:',
     namespaceIdAlreadyExist: 'namespaceId already exist',
-    newnamespceFailedMessage:
-      'namespaceId format is incorrect/namespaceId length greater than 128/namespaceId already exist',
+    newnamespceFailedMessage: 'namespaceId format is incorrect/namespaceId length greater than 128/namespaceId already exist',
   },
   NameSpaceList: {
     notice: 'Notice',
@@ -563,7 +565,8 @@ const I18N_CONF = {
     usernameError: 'User name cannot be empty!',
     passwordError: 'Password cannot be empty!',
     rePasswordError: 'Repeat Password cannot be empty!',
-		rePasswordError2: 'Passwords are inconsistent!',
+    rePasswordError2: 'Passwords are inconsistent!',
+    userAlreadyExists: 'user already exist!',
 		userSuccessed: 'create user ok!',
   },
   PasswordReset: {
@@ -588,7 +591,7 @@ const I18N_CONF = {
     deleteRoleTip: 'Do you want to delete this role?',
 		refresh: 'Refresh',
 		deleteRoleSuccessed: 'Delete Binding role ok!',
-    bindUserToRoleFail: '英文-用户绑定到角色的信息已存在!'
+    bindUserToRoleFail: 'role already exist!'
   },
   NewRole: {
     bindingRoles: 'Binding roles',

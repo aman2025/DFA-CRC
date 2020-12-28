@@ -23,6 +23,8 @@ const I18N_CONF = {
     languageSwitchButton: 'En',
     logout: '登出',
     changePassword: '修改密码',
+    passwordRequired: '密码不能为空',
+    usernameRequired: '用户名不能为空',
   },
   Login: {
     login: '登录',
@@ -589,6 +591,7 @@ const I18N_CONF = {
     deleteRoleTip: '是否要删除该角色？',
     refresh: '刷新',
     deleteRoleSuccessed: '删除角色绑定信息成功!',
+    bindUserToRoleFail: '用户绑定到角色的信息已存在!'
   },
   NewRole: {
     bindingRoles: '绑定角色',

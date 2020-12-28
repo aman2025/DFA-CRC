@@ -188,7 +188,6 @@ class SubscriberList extends React.Component {
             <Col span="24" style={{ padding: 0 }}>
               <Table dataSource={subscribers} locale={{ empty: pubNoData }}>
                 <Column title={locale.address} dataIndex="addrStr" />
-                <Column title={locale.clientVersion} dataIndex="agent" />
                 <Column title={locale.appName} dataIndex="app" />
               </Table>
             </Col>

@@ -258,11 +258,6 @@ class ServiceList extends React.Component {
                   {query}
                 </Button>
               </FormItem>
-              <FormItem label="" style={{ float: 'right' }}>
-                <Button type="secondary" onClick={() => this.openEditServiceDialog()}>
-                  {create}
-                </Button>
-              </FormItem>
             </Form>
           </Col>
         </Row>
@@ -298,14 +293,6 @@ class ServiceList extends React.Component {
                       style={{ marginRight: 5 }}
                     >
                       {detail}
-                    </a>
-                    <span style={{ marginRight: 5 }}>|</span>
-                    <a style={{ marginRight: 5 }} onClick={() => this.showSampleCode(record)}>
-                      {sampleCode}
-                    </a>
-                    <span style={{ marginRight: 5 }}>|</span>
-                    <a onClick={() => this.deleteService(record)} style={{ marginRight: 5 }}>
-                      {deleteAction}
                     </a>
                   </div>
                 )}
