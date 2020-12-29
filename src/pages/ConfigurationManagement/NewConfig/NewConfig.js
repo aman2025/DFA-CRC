@@ -575,7 +575,7 @@ class NewConfig extends React.Component {
               </div>
             </FormItem>
           </Form>
-          <SuccessDialog ref={this.successDialog} />
+          <SuccessDialog ref={this.successDialog} goback={this.goList.bind(this)} />
         </Loading>
       </div>
     );

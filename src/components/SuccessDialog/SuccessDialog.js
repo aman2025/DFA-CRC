@@ -29,6 +29,7 @@ class SuccessDialog extends React.Component {
   static propTypes = {
     locale: PropTypes.object,
     unpushtrace: PropTypes.bool,
+    goback: PropTypes.func
   };
 
   constructor(props) {
@@ -74,6 +75,7 @@ class SuccessDialog extends React.Component {
     this.setState({
       visible: false,
     });
+    this.props.goback();
   }
 
   render() {

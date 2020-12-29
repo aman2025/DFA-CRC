@@ -26,6 +26,7 @@ test/screenshots/*
 *.svg
 *.png
 *.ico
+*.log
 
 *.rar
 .idea
