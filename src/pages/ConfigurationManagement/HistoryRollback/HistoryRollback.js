@@ -28,7 +28,7 @@ class HistoryRollback extends React.Component {
 
   static propTypes = {
     locale: PropTypes.object,
-		history: PropTypes.object,
+    history: PropTypes.object,
   };
 
   constructor(props) {
