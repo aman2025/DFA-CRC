@@ -329,7 +329,7 @@ const I18N_CONF = {
     delSelectedAlertContent: '请选择要删除的配置',
     delSuccessMsg: '删除成功',
     cloneEditableTitle: '修改 配置ID 和 应用 (可选操作)',
-    authFail: '权限认证失败',
+    authFail: '认证失败，请重新登录。',
     configId: '配置ID',
     applicationGroup: '应用简称',
     appNamenull: '应用中文名称不能为空',

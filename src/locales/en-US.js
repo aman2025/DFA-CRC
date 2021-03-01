@@ -329,7 +329,7 @@ const I18N_CONF = {
     delSelectedAlertContent: 'please select the configuration to delete',
     delSuccessMsg: 'delete successful',
     cloneEditableTitle: 'Modify Data Id and Application (optional)',
-	authFail: 'Auth failed',
+	authFail: 'Auth failed, please login again',
 		configId: 'Config ID',
     applicationGroup: 'Application Name',
     appNamenull: 'Application Chinese should not be empty',
