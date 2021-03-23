@@ -210,8 +210,8 @@ const I18N_CONF = {
     pleaseInputIp: 'Enter IP',
     query: 'Search',
     queryResultsQuery: 'Search Results: Found',
-		articleMeetRequirementsConfiguration: 'configuration items.',
-		configId: 'Config ID',
+    articleMeetRequirementsConfiguration: 'configuration items.',
+    configId: 'Config ID',
     applicationGroup: 'Application',
   },
   HistoryRollback: {
@@ -228,8 +228,8 @@ const I18N_CONF = {
     articleMeet: 'configuration items.',
     lastUpdateTime: 'Last Modified At',
     operator: 'Operator',
-		operation: 'Operation',
-		configId: 'Config ID',
+    operation: 'Operation',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
   },
   HistoryDetail: {
@@ -243,8 +243,8 @@ const I18N_CONF = {
     actionType: 'Action Type',
     operator: 'Operator',
     configureContent: 'Configuration Content',
-		back: 'Back',
-		configId: 'Config ID',
+    back: 'Back',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
   },
   DashboardCard: {
@@ -253,7 +253,8 @@ const I18N_CONF = {
   },
   ConfigurationManagement: {
     questionnaire2: 'questionnaire',
-    ad: 'a ACM front-end monitoring questionnaire, the time limit to receive Ali cloud voucher details shoved stamp: the',
+    ad:
+      'a ACM front-end monitoring questionnaire, the time limit to receive Ali cloud voucher details shoved stamp: the',
     noLongerDisplay4: 'no longer display',
     removeConfiguration: 'Delete Configuration',
     sureDelete: 'Are you sure you want to delete the following configuration?',
@@ -298,7 +299,8 @@ const I18N_CONF = {
     abortImport: 'Abort import',
     skipImport: 'Skip',
     overwriteImport: 'Overwrite',
-    importRemind: 'File upload will be imported directly into the configuration, please be careful!',
+    importRemind:
+      'File upload will be imported directly into the configuration, please be careful!',
     samePreparation: 'Same preparation',
     targetNamespace: 'Target namespace',
     conflictConfig: 'Conflict-detected configuration items',
@@ -329,8 +331,8 @@ const I18N_CONF = {
     delSelectedAlertContent: 'please select the configuration to delete',
     delSuccessMsg: 'delete successful',
     cloneEditableTitle: 'Modify Data Id and Application (optional)',
-	authFail: 'Auth failed, please login again',
-		configId: 'Config ID',
+    authFail: 'Auth failed, please login again',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
     appNamenull: 'Application Chinese should not be empty',
   },
@@ -360,8 +362,8 @@ const I18N_CONF = {
     release: 'Back',
     confirmSyanx: 'The configuration information may has a syntax error. Are you sure to submit?',
     dataIdExists: 'Configuration already exists. Enter a new Config ID and Application name.',
-		dataRequired: 'Data cannot be empty, submission failed',
-		configId: 'Config ID',
+    dataRequired: 'Data cannot be empty, submission failed',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
   },
   CloneDialog: {
@@ -385,8 +387,8 @@ const I18N_CONF = {
     determine: 'OK',
     deletetitle: 'Delete Configuration',
     deletedSuccessfully: 'Configuration deleted',
-		deleteFailed: 'Deleting configuration failed',
-		configId: 'Config ID',
+    deleteFailed: 'Deleting configuration failed',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
   },
   DiffEditorDialog: {
@@ -424,8 +426,8 @@ const I18N_CONF = {
     codeValErrorPrompt: 'Configuration information may have syntax errors. Are you sure to submit?',
     dialogTitle: 'Content Comparison',
     dialogCurrentArea: 'Current Value',
-		dialogOriginalArea: 'Original Value',
-		configId: 'Config ID',
+    dialogOriginalArea: 'Original Value',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
   },
   EditorNameSpace: {
@@ -437,8 +439,8 @@ const I18N_CONF = {
     load: 'Namespace',
     namespace: 'Namespace cannot be empty',
     namespaceDesc: 'Namespace description cannot be empty',
-		description: 'Description',
-		norepeat: 'Duplicate namespace. Please enter a different name.',
+    description: 'Description',
+    norepeat: 'Duplicate namespace. Please enter a different name.',
   },
   ExportDialog: {
     selectedEntry: '| Selected Entry',
@@ -467,8 +469,8 @@ const I18N_CONF = {
   SuccessDialog: {
     title: 'Configuration Management',
     determine: 'OK',
-		failure: 'Failed',
-		configId: 'Config ID',
+    failure: 'Failed',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
   },
   ConfigSync: {
@@ -495,13 +497,15 @@ const I18N_CONF = {
     name: 'Namespace',
     namespaceId: 'Namespace ID',
     namespaceIdTooLong: 'The namespace ID length cannot exceed 128',
+    namespaceTooLong: 'The namespace length cannot exceed 118',
     customNamespaceIdnull: 'The namespace ID cannot be empty',
     customNamespaceIdPlaceholder: 'Please enter the namespace ID (Chinese is not allowed)',
     namespacenotnull: 'Namespace cannot be empty',
     namespacedescnotnull: 'Namespace description cannot be empty',
     description: 'Description',
     namespaceIdAlreadyExist: 'namespaceId already exist',
-    newnamespceFailedMessage: 'namespaceId format is incorrect/namespaceId length greater than 128/namespaceId already exist',
+    newnamespceFailedMessage:
+      'namespaceId format is incorrect/namespaceId length greater than 128/namespaceId already exist',
   },
   NameSpaceList: {
     notice: 'Notice',
@@ -520,8 +524,8 @@ const I18N_CONF = {
     back: 'Back',
     versionComparison: 'Version Comparison',
     dialogCurrentArea: 'Current Version',
-		dialogOriginalArea: 'Previous Version',
-		configId: 'Config ID',
+    dialogOriginalArea: 'Previous Version',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
   },
   ConfigRollback: {
@@ -538,8 +542,8 @@ const I18N_CONF = {
     rollbackSuccessful: 'Rollback Successful',
     rollbackDelete: 'Delete',
     update: 'Update',
-		insert: 'Insert',
-		configId: 'Config ID',
+    insert: 'Insert',
+    configId: 'Config ID',
     applicationGroup: 'Application Name',
   },
   UserManagement: {
@@ -551,8 +555,8 @@ const I18N_CONF = {
     username: 'Username',
     password: 'Password',
     operation: 'Operation',
-		refresh: 'Refresh',
-		deleteUserSuccessed: 'Delete user ok!',
+    refresh: 'Refresh',
+    deleteUserSuccessed: 'Delete user ok!',
   },
   NewUser: {
     createUser: 'Create user',
@@ -567,7 +571,7 @@ const I18N_CONF = {
     rePasswordError: 'Repeat Password cannot be empty!',
     rePasswordError2: 'Passwords are inconsistent!',
     userAlreadyExists: 'user already exist!',
-		userSuccessed: 'create user ok!',
+    userSuccessed: 'create user ok!',
   },
   PasswordReset: {
     resetPassword: 'Password Reset',
@@ -578,8 +582,8 @@ const I18N_CONF = {
     rePasswordPlaceholder: 'Please Enter Repeat Password',
     passwordError: 'Password cannot be empty!',
     rePasswordError: 'Repeat Password cannot be empty!',
-		rePasswordError2: 'Passwords are inconsistent!',
-		passwordResetSuccessed: 'update user ok!',
+    rePasswordError2: 'Passwords are inconsistent!',
+    passwordResetSuccessed: 'update user ok!',
   },
   RolesManagement: {
     roleManagement: 'Role management',
@@ -589,9 +593,9 @@ const I18N_CONF = {
     operation: 'Operation',
     deleteRole: 'Delete',
     deleteRoleTip: 'Do you want to delete this role?',
-		refresh: 'Refresh',
-		deleteRoleSuccessed: 'Delete Binding role ok!',
-    bindUserToRoleFail: 'role already exist!'
+    refresh: 'Refresh',
+    deleteRoleSuccessed: 'Delete Binding role ok!',
+    bindUserToRoleFail: 'role already exist!',
   },
   NewRole: {
     bindingRoles: 'Binding roles',
@@ -600,9 +604,9 @@ const I18N_CONF = {
     usernamePlaceholder: 'Please Enter Username',
     rolePlaceholder: 'Please Enter Role',
     usernameError: 'User name cannot be empty!',
-		roleError: 'Role cannot be empty!',
-		bindUserToRoleFail: 'role already exist!',
-		addRoleSuccessed: 'Role add ok!'
+    roleError: 'Role cannot be empty!',
+    bindUserToRoleFail: 'role already exist!',
+    addRoleSuccessed: 'Role add ok!',
   },
   PermissionsManagement: {
     privilegeManagement: 'Permissions Management',
@@ -616,8 +620,8 @@ const I18N_CONF = {
     readOnly: 'read only',
     writeOnly: 'write only',
     readWrite: 'Read and write',
-		refresh: 'Refresh',
-		deletePermissionSuccessed: 'Delete Permission Ok!'
+    refresh: 'Refresh',
+    deletePermissionSuccessed: 'Delete Permission Ok!',
   },
   NewPermissions: {
     addPermission: 'Add Permission',
@@ -632,9 +636,9 @@ const I18N_CONF = {
     actionError: 'Action cannot be empty!',
     readOnly: 'read only',
     writeOnly: 'write only',
-		readWrite: 'Read and write',
-		rolePermission: 'Permission already exist!',
-		addPermissionsSuccessed: 'Add Permission Ok!'
+    readWrite: 'Read and write',
+    rolePermission: 'Permission already exist!',
+    addPermissionsSuccessed: 'Add Permission Ok!',
   },
 };
 export default I18N_CONF;

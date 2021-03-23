@@ -254,12 +254,13 @@ class NewNameSpace extends React.Component {
                 <Input
                   {...this.field.init('customNamespaceId', {
                     rules: [
-											{
-												required: true,
-												message: locale.customNamespaceIdnull,
+                      {
+                        required: true,
+                        message: locale.customNamespaceIdnull,
                       },
-											{ validator: this.validateNamespzecId.bind(this) }],
-									})}
+                      { validator: this.validateNamespzecId.bind(this) },
+                    ],
+                  })}
                   placeholder={locale.customNamespaceIdPlaceholder}
                   style={{ width: '100%' }}
                 />
@@ -271,6 +272,10 @@ class NewNameSpace extends React.Component {
                       {
                         required: true,
                         message: locale.namespacenotnull,
+                      },
+                      {
+                        maxLength: 118,
+                        message: locale.namespaceTooLong,
                       },
                       { validator: this.validateChart.bind(this) },
                     ],

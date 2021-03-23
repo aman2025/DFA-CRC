@@ -243,8 +243,8 @@ const I18N_CONF = {
     actionType: '操作类型:',
     configureContent: '配置内容',
     operator: '操作人:',
-		back: '返回',
-		configId: '配置ID',
+    back: '返回',
+    configId: '配置ID',
     applicationGroup: '应用简称',
   },
   DashboardCard: {
@@ -385,8 +385,8 @@ const I18N_CONF = {
     determine: '确定',
     deletetitle: '删除配置',
     deletedSuccessfully: '删除配置成功',
-		deleteFailed: '删除配置失败',
-		configId: '配置ID',
+    deleteFailed: '删除配置失败',
+    configId: '配置ID',
     applicationGroup: '应用简称',
   },
   DiffEditorDialog: {
@@ -437,8 +437,8 @@ const I18N_CONF = {
     load: '命名空间名称',
     namespace: '命名空间不能为空',
     namespaceDesc: '命名空间描述不能为空',
-		description: '描述',
-		norepeat: '命名空间名称不能重复',
+    description: '描述',
+    norepeat: '命名空间名称不能重复',
   },
   ExportDialog: {
     selectedEntry: '| 选中的条目',
@@ -467,8 +467,8 @@ const I18N_CONF = {
   SuccessDialog: {
     title: '配置管理',
     determine: '确定',
-		failure: '失败',
-		configId: '配置ID',
+    failure: '失败',
+    configId: '配置ID',
     applicationGroup: '应用简称',
   },
   ConfigSync: {
@@ -495,13 +495,14 @@ const I18N_CONF = {
     name: '命名空间名',
     namespaceId: '命名空间ID',
     namespaceIdTooLong: '命名空间ID长度不能超过128',
+    namespaceTooLong: '命名空间长度不能超过118',
     customNamespaceIdnull: '命名空间ID不能为空',
     customNamespaceIdPlaceholder: '请输入命名空间ID(不允许用中文)',
     namespacenotnull: '命名空间不能为空',
     namespacedescnotnull: '命名空间描述不能为空',
     description: '描述',
     namespaceIdAlreadyExist: '命名空间ID已存在',
-		newnamespceFailedMessage: '命名空间Id格式不正确/命名空间Id长度大于128/命名空间Id已存在',
+    newnamespceFailedMessage: '命名空间Id格式不正确/命名空间Id长度大于128/命名空间Id已存在',
   },
   NameSpaceList: {
     notice: '提示',
@@ -520,8 +521,8 @@ const I18N_CONF = {
     back: '返回',
     versionComparison: '版本对比',
     dialogCurrentArea: '当前版本',
-	dialogOriginalArea: '上一版本',
-	configId: '配置ID',
+    dialogOriginalArea: '上一版本',
+    configId: '配置ID',
     applicationGroup: '应用简称',
   },
   ConfigRollback: {
@@ -538,8 +539,8 @@ const I18N_CONF = {
     rollbackSuccessful: '回滚成功',
     rollbackDelete: '删除',
     update: '更新',
-		insert: '插入',
-		configId: '配置ID',
+    insert: '插入',
+    configId: '配置ID',
     applicationGroup: '应用简称',
   },
   UserManagement: {
@@ -591,7 +592,7 @@ const I18N_CONF = {
     deleteRoleTip: '是否要删除该角色？',
     refresh: '刷新',
     deleteRoleSuccessed: '删除角色绑定信息成功!',
-    bindUserToRoleFail: '用户绑定到角色的信息已存在!'
+    bindUserToRoleFail: '用户绑定到角色的信息已存在!',
   },
   NewRole: {
     bindingRoles: '绑定角色',
@@ -602,7 +603,7 @@ const I18N_CONF = {
     usernameError: '用户名不能为空！',
     roleError: '角色名不能为空!',
     bindUserToRoleFail: '用户绑定到角色的信息已存在!',
-    addRoleSuccessed: '添加角色成功!'
+    addRoleSuccessed: '添加角色成功!',
   },
   PermissionsManagement: {
     privilegeManagement: '权限管理',
@@ -616,8 +617,8 @@ const I18N_CONF = {
     readOnly: '只读',
     writeOnly: '只写',
     readWrite: '读写',
-		refresh: '刷新',
-		deletePermissionSuccessed: '删除权限成功!'
+    refresh: '刷新',
+    deletePermissionSuccessed: '删除权限成功!',
   },
   NewPermissions: {
     addPermission: '添加权限',
@@ -632,9 +633,9 @@ const I18N_CONF = {
     actionError: '动作不能为空!',
     readOnly: '只读',
     writeOnly: '只写',
-		readWrite: '读写',
-		rolePermission: '指定的授权信息已存在，请使用其它的角色名!',
-		addPermissionsSuccessed: '添加权限成功!'
+    readWrite: '读写',
+    rolePermission: '指定的授权信息已存在，请使用其它的角色名!',
+    addPermissionsSuccessed: '添加权限成功!',
   },
 };
 export default I18N_CONF;
