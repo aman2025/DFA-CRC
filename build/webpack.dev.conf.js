@@ -29,8 +29,8 @@ module.exports = Object.assign({}, base, {
       context: ['/'],
       changeOrigin: true,
       secure: false,
-      target: 'http://localhost:8848',
-      pathRewrite: {'^/v1' : '/nacos/v1'}
+      target: 'http://10.168.0.45:9009/',
+      pathRewrite: {'^/v1' : '/dfacrc/v1'}
     }],
     disableHostCheck: true,
     open: true,
