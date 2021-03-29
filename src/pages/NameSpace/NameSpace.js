@@ -126,21 +126,27 @@ class NameSpace extends React.Component {
                 <div style={{ marginTop: '10px' }}>
                   <p>
                     <span style={{ color: '#999', marginRight: 5 }}>{`${namespaceName}:`}</span>
-                    <span style={{ color: '#c7254e' }}>{res.namespaceShowName}</span>
+                    <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+                      {res.namespaceShowName}
+                    </span>
                   </p>
                   <p>
                     <span style={{ color: '#999', marginRight: 5 }}>{`${namespaceID}:`}</span>
-                    <span style={{ color: '#c7254e' }}>{res.namespace}</span>
+                    <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+                      {res.namespace}
+                    </span>
                   </p>
                   <p>
                     <span style={{ color: '#999', marginRight: 5 }}>{`${configuration}:`}</span>
-                    <span style={{ color: '#c7254e' }}>
+                    <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
                       {res.configCount} / {res.quota}
                     </span>
                   </p>
                   <p>
                     <span style={{ color: '#999', marginRight: 5 }}>{`${description}:`}</span>
-                    <span style={{ color: '#c7254e' }}>{res.namespaceDesc}</span>
+                    <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+                      {res.namespaceDesc}
+                    </span>
                   </p>
                 </div>
               </div>
@@ -270,7 +276,7 @@ class NameSpace extends React.Component {
 
   addNameSpace() {
     this.newnamespace.current.getInstance().openDialog(this.state.dataSource);
-	}
+  }
 
   renderName(value, index, record) {
     const { locale = {} } = this.props;

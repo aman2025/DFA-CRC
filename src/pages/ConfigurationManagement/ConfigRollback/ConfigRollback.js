@@ -123,11 +123,15 @@ class ConfigRollback extends React.Component {
           </h3>
           <p>
             <span style={{ color: '#999', marginRight: 5 }}>{locale.configId}:</span>
-            <span style={{ color: '#c7254e' }}>{self.field.getValue('dataId')}</span>
+            <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+              {self.field.getValue('dataId')}
+            </span>
           </p>
           <p>
             <span style={{ color: '#999', marginRight: 5 }}>{locale.applicationGroup}:</span>
-            <span style={{ color: '#c7254e' }}>{self.field.getValue('group')}</span>
+            <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+              {self.field.getValue('group')}
+            </span>
           </p>
         </div>
       ),

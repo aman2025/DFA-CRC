@@ -29,7 +29,7 @@ class SuccessDialog extends React.Component {
   static propTypes = {
     locale: PropTypes.object,
     unpushtrace: PropTypes.bool,
-    goback: PropTypes.func
+    goback: PropTypes.func,
   };
 
   constructor(props) {
@@ -117,11 +117,17 @@ class SuccessDialog extends React.Component {
                   )}
                   <p>
                     <span style={{ color: '#999', marginRight: 5 }}>{locale.configId}:</span>
-                    <span style={{ color: '#c7254e' }}>{this.state.dataId}</span>
+                    <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+                      {this.state.dataId}
+                    </span>
                   </p>
                   <p>
-                    <span style={{ color: '#999', marginRight: 5 }}>{locale.applicationGroup}:</span>
-                    <span style={{ color: '#c7254e' }}>{this.state.group}</span>
+                    <span style={{ color: '#999', marginRight: 5 }}>
+                      {locale.applicationGroup}:
+                    </span>
+                    <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+                      {this.state.group}
+                    </span>
                   </p>
                   {this.state.isok ? '' : <p style={{ color: 'red' }}>{this.state.message}</p>}
                 </div>

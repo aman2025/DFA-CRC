@@ -102,11 +102,17 @@ class DeleteDialog extends React.Component {
                   <h3>{this.state.isok ? locale.deletedSuccessfully : locale.deleteFailed}</h3>
                   <p>
                     <span style={{ color: '#999', marginRight: 5 }}>{locale.configId}:</span>
-                    <span style={{ color: '#c7254e' }}>{this.state.dataId}</span>
+                    <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+                      {this.state.dataId}
+                    </span>
                   </p>
                   <p>
-                    <span style={{ color: '#999', marginRight: 5 }}>{locale.applicationGroup}:</span>
-                    <span style={{ color: '#c7254e' }}>{this.state.group}</span>
+                    <span style={{ color: '#999', marginRight: 5 }}>
+                      {locale.applicationGroup}:
+                    </span>
+                    <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>
+                      {this.state.group}
+                    </span>
                   </p>
                   {this.state.isok ? '' : <p style={{ color: 'red' }}>{this.state.message}</p>}
                 </div>

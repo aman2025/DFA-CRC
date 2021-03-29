@@ -127,7 +127,7 @@ class ConfigurationManagement extends React.Component {
   }
 
   componentDidMount() {
-		const { locale = {} } = this.props;
+    const { locale = {} } = this.props;
     // this.getGroup();
     this.setIsCn();
     if (window._getLink && window._getLink('isCn') === 'true') {
@@ -219,15 +219,15 @@ class ConfigurationManagement extends React.Component {
     this.setState({
       loading: true,
     });
-	}
-	
+  }
+
   getGroups() {
-		var newGroups = [];
-		var pageItems = this.props.configurations.pageItems;
-		newGroups = pageItems.map(item => {
-			return item.group
-		})
-		return newGroups;
+    var newGroups = [];
+    var pageItems = this.props.configurations.pageItems;
+    newGroups = pageItems.map(item => {
+      return item.group;
+    });
+    return newGroups;
   }
 
   closeLoading() {
@@ -291,9 +291,9 @@ class ConfigurationManagement extends React.Component {
           loading: false,
           selectedRecord: [],
           selectedKeys: [],
-					tenant: this.tenant,
-					groups: this.getGroups()
-				})
+          tenant: this.tenant,
+          groups: this.getGroups(),
+        })
       )
       .catch(res => {
         configurations.pageItems = [];
@@ -341,15 +341,15 @@ class ConfigurationManagement extends React.Component {
           <h3>{locale.sureDelete}</h3>
           <p>
             <span style={{ color: '#999', marginRight: 5 }}>{locale.configId}:</span>
-            <span style={{ color: '#c7254e' }}>{record.dataId}</span>
+            <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>{record.dataId}</span>
           </p>
           <p>
             <span style={{ color: '#999', marginRight: 5 }}>{locale.applicationGroup}:</span>
-            <span style={{ color: '#c7254e' }}>{record.group}</span>
+            <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>{record.group}</span>
           </p>
           <p>
             <span style={{ color: '#999', marginRight: 5 }}>{locale.environment}</span>
-            <span style={{ color: '#c7254e' }}>{self.serverId || ''}</span>
+            <span style={{ color: '#c7254e', wordBreak: 'break-all' }}>{self.serverId || ''}</span>
           </p>
         </div>
       ),
@@ -403,7 +403,7 @@ class ConfigurationManagement extends React.Component {
           {locale.deleteAction}
         </a>
         <span style={{ marginRight: 5 }}>|</span>
-				<Dropdown
+        <Dropdown
           trigger={
             <span style={{ color: '#33cde5' }}>
               {locale.more}
@@ -961,7 +961,11 @@ class ConfigurationManagement extends React.Component {
                   dataIndex="dataId"
                   cell={renderEditableTableCellDataId}
                 />
-                <Table.Column title={locale.applicationGroup} dataIndex="group" cell={renderEditableTableCellGroup} />
+                <Table.Column
+                  title={locale.applicationGroup}
+                  dataIndex="group"
+                  cell={renderEditableTableCellGroup}
+                />
               </Table>
             </>
           ),
@@ -1234,7 +1238,7 @@ class ConfigurationManagement extends React.Component {
               }}
             >
               <Form inline>
-                <Form.Item label={locale.configId} >
+                <Form.Item label={locale.configId}>
                   <Input
                     defaultValue={this.dataId}
                     htmlType="text"
