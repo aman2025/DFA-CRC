@@ -56,9 +56,11 @@ class NewUser extends React.Component {
     if (vals.filter(v => v).length !== 3) {
       return null;
     }
-    const [username, password, rePassword] = ['username', 'password', 'rePassword'].map(k =>
-      this.field.getValue(k)
+    const [username, password, rePassword] = ['username', 'password', 'rePassword'].map(
+      k => this.field.getValue(k)
+      // eslint-disable-next-line function-paren-newline
     );
+
     if (username.length > 50) {
       // 用户名不能超过50个字符
       return null;
