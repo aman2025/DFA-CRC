@@ -56,7 +56,13 @@ class NewUser extends React.Component {
     if (vals.filter(v => v).length !== 3) {
       return null;
     }
-    const [password, rePassword] = ['password', 'rePassword'].map(k => this.field.getValue(k));
+    const [username, password, rePassword] = ['username', 'password', 'rePassword'].map(k =>
+      this.field.getValue(k)
+    );
+    if (username.length > 50) {
+      // 用户名不能超过50个字符
+      return null;
+    }
     if (password !== rePassword) {
       this.field.setError('rePassword', locale.rePasswordError2);
       return null;
@@ -76,15 +82,13 @@ class NewUser extends React.Component {
           onOk={() => {
             const vals = this.check();
             if (vals) {
-              onOk([...vals, locale.userSuccessed]).then(
-								(res) => {
-									if (res.status === 400) {
-										Dialog.alert({ content: locale.userAlreadyExists });
-									} else {
-										onCancel();
-									}
-								}
-							);
+              onOk([...vals, locale.userSuccessed]).then(res => {
+                if (res.status === 400) {
+                  Dialog.alert({ content: locale.userAlreadyExists });
+                } else {
+                  onCancel();
+                }
+              });
             }
           }}
           onClose={onCancel}
@@ -92,8 +96,24 @@ class NewUser extends React.Component {
           afterClose={() => this.field.reset()}
         >
           <Form style={{ width: 400 }} {...formItemLayout} field={this.field}>
-            <FormItem label={locale.username} required help={getError('username')}>
-              <Input name="username" trim placeholder={locale.usernamePlaceholder} />
+            <FormItem label={locale.username} required>
+              <Input
+                name="username"
+                trim
+                placeholder={locale.usernamePlaceholder}
+                {...this.field.init('username', {
+                  rules: [
+                    {
+                      required: true,
+                      message: locale.usernameError,
+                    },
+                    {
+                      maxLength: 50,
+                      message: locale.usernameTooLong,
+                    },
+                  ],
+                })}
+              />
             </FormItem>
             <FormItem label={locale.password} required help={getError('password')}>
               <Input name="password" htmlType="password" placeholder={locale.passwordPlaceholder} />

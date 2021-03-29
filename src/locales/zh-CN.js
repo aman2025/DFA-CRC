@@ -564,6 +564,7 @@ const I18N_CONF = {
     passwordPlaceholder: '请输入密码',
     rePasswordPlaceholder: '请输入确认密码',
     usernameError: '用户名不能为空！',
+    usernameTooLong: '用户名不能超过50！',
     passwordError: '密码不能为空!',
     rePasswordError: '确认密码不能为空!',
     rePasswordError2: '两次输入密码不一致!',

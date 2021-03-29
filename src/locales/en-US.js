@@ -567,6 +567,7 @@ const I18N_CONF = {
     passwordPlaceholder: 'Please Enter Password',
     rePasswordPlaceholder: 'Please Enter Repeat Password',
     usernameError: 'User name cannot be empty!',
+    usernameTooLong: 'User name length cannot exceed 50!',
     passwordError: 'Password cannot be empty!',
     rePasswordError: 'Repeat Password cannot be empty!',
     rePasswordError2: 'Passwords are inconsistent!',

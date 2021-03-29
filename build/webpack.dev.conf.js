@@ -29,7 +29,7 @@ module.exports = Object.assign({}, base, {
       context: ['/'],
       changeOrigin: true,
       secure: false,
-      target: 'http://10.168.1.91:9009/',
+      target: 'http://10.168.0.45:5069/',
       pathRewrite: {'^/v1' : '/dfacrc/v1'}
     }],
     disableHostCheck: true,
