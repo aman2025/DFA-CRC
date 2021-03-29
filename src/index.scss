@@ -1235,3 +1235,8 @@ form.vertical-margin-lg .form-group {
 .row-bg-red {
   background-color: #ffece4;
 }
+// dialog弹出框，外框样式
+.overDialogIcon .next-message.next-message-help.next-addon .next-message-symbol-icon::before{
+  content: '✔' !important;
+  color: #09BB07 !important;
+}

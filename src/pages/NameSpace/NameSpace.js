@@ -200,7 +200,11 @@ class NameSpace extends React.Component {
               if (record.namespace === urlnamespace) {
                 setParams('namespace', this.state.defaultNamespace);
               }
-              Dialog.confirm({ content: removeSuccess, title: deletedSuccessfully });
+              Dialog.confirm({
+                className: 'overDialogIcon',
+                content: removeSuccess,
+                title: deletedSuccessfully,
+              });
             } else {
               Dialog.confirm({ content: res.message, title: deletedFailure });
             }
