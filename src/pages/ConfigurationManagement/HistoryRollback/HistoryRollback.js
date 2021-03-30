@@ -16,7 +16,16 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ConfigProvider, Field, Form, Input, Loading, Pagination, Table, Select } from '@alifd/next';
+import {
+  ConfigProvider,
+  Field,
+  Form,
+  Input,
+  Loading,
+  Pagination,
+  Table,
+  Select,
+} from '@alifd/next';
 import RegionGroup from 'components/RegionGroup';
 import { getParams, setParams, request } from '@/globalLib';
 
@@ -54,8 +63,8 @@ class HistoryRollback extends React.Component {
       showAppName: false,
       showgroup: false,
       dataId: this.dataId,
-			group: this.group,
-			groups: [],
+      group: this.group,
+      groups: [],
       appName: this.appName,
       selectValue: [],
       loading: false,
@@ -72,7 +81,7 @@ class HistoryRollback extends React.Component {
   componentDidMount() {
     this.field.setValue('group', this.group);
     this.field.setValue('dataId', this.dataId);
-		// this.getData();
+    // this.getData();
   }
 
   openLoading() {
@@ -112,16 +121,16 @@ class HistoryRollback extends React.Component {
       beforeSend() {
         self.openLoading();
       },
-      url: `v1/cs/history?search=accurate&dataId=${this.dataId}&group=${this.group}&&pageNo=${pageNo}&pageSize=${this.state.pageSize}`,
+      url: `v1/cs/history?search=accurate&dataId=${this.dataId}&group=${this.state.group}&&pageNo=${pageNo}&pageSize=${this.state.pageSize}`,
       success(data) {
         if (data != null) {
           self.setState({
             dataSource: data.pageItems || [],
             total: data.totalCount,
-						currentPage: data.pageNumber,
-						groups: data.pageItems.map(item => item.group),
+            currentPage: data.pageNumber,
+            groups: data.pageItems.map(item => item.group),
           });
-				}
+        }
       },
       complete() {
         self.closeLoading();
@@ -155,9 +164,9 @@ class HistoryRollback extends React.Component {
     this.setState({
       fieldValue,
     });
-	}
+  }
 
-	/**
+  /**
    * groupId赋值
    */
   setGroup(value) {
@@ -242,7 +251,7 @@ class HistoryRollback extends React.Component {
           />
           <div>
             <Form inline field={this.field}>
-              <Form.Item label={locale.configId} >
+              <Form.Item label={locale.configId}>
                 <Input
                   placeholder={locale.dataId}
                   style={{ width: 200 }}
@@ -256,17 +265,18 @@ class HistoryRollback extends React.Component {
                   })}
                 />
               </Form.Item>
+
               <Form.Item label={locale.applicationGroup}>
-								<Select.AutoComplete
-  style={{ width: 200 }}
-  size={'medium'}
-  placeholder={locale.group}
-  dataSource={this.state.groups}
-  value={this.state.group}
-  onChange={this.setGroup.bind(this)}
-  onPressEnter={() => this.getData()}
-  hasClear
-								/>
+                <Select.AutoComplete
+                  style={{ width: 200 }}
+                  size={'medium'}
+                  placeholder={locale.group}
+                  dataSource={this.state.groups}
+                  value={this.state.group}
+                  onChange={this.setGroup.bind(this)}
+                  onPressEnter={() => this.getData()}
+                  hasClear
+                />
               </Form.Item>
 
               <Form.Item label="">
