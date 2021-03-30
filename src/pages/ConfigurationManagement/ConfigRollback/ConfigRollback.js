@@ -162,7 +162,7 @@ class ConfigRollback extends React.Component {
           data: postData,
           success(data) {
             if (data === true) {
-              Dialog.alert({ content: locale.rollbackSuccessful });
+              Dialog.alert({ className: 'overRollbackIcon', content: locale.rollbackSuccessful });
             }
           },
         });
