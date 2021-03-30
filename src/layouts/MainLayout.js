@@ -90,6 +90,7 @@ class MainLayout extends React.Component {
             {this.isShowGoBack() ? (
               <div className="go-back" onClick={() => this.goBack()}>
                 <Icon type="arrow-left" />
+                <span>返回</span>
               </div>
             ) : (
               <>
