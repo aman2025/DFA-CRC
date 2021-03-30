@@ -274,7 +274,6 @@ class ServiceList extends React.Component {
               <Column title={locale.columnClusterCount} dataIndex="clusterCount" />
               <Column title={locale.columnIpCount} dataIndex="ipCount" />
               <Column title={locale.columnHealthyInstanceCount} dataIndex="healthyInstanceCount" />
-              <Column title={locale.columnTriggerFlag} dataIndex="triggerFlag" />
               <Column
                 title={operation}
                 align="center"

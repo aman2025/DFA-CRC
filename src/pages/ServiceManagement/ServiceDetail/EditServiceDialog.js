@@ -162,17 +162,7 @@ class EditServiceDialog extends React.Component {
               <Input value={name} onChange={name => this.onChangeCluster({ name })} />
             )}
           </Form.Item>
-          <Form.Item
-            required
-            {...formItemLayout}
-            label={`${locale.protectThreshold}:`}
-            {...errors.protectThreshold}
-          >
-            <Input
-              value={protectThreshold}
-              onChange={protectThreshold => this.onChangeCluster({ protectThreshold })}
-            />
-          </Form.Item>
+
           <Form.Item {...formItemLayout} label={`${locale.groupName}:`}>
             <Input
               defaultValue={groupName}
@@ -181,25 +171,7 @@ class EditServiceDialog extends React.Component {
               onChange={groupName => this.onChangeCluster({ groupName })}
             />
           </Form.Item>
-          <Form.Item label={`${locale.metadata}:`} {...formItemLayout}>
-            <MonacoEditor
-              language="json"
-              width={'100%'}
-              height={200}
-              value={metadataText}
-              onChange={metadataText => this.onChangeCluster({ metadataText })}
-            />
-          </Form.Item>
-          <Form.Item label={`${locale.type}:`} {...formItemLayout}>
-            <Select
-              className="full-width"
-              defaultValue={selector.type}
-              onChange={type => this.onChangeCluster({ selector: { ...selector, type } })}
-            >
-              <Select.Option value="label">{locale.typeLabel}</Select.Option>
-              <Select.Option value="none">{locale.typeNone}</Select.Option>
-            </Select>
-          </Form.Item>
+
           {selector.type === 'label' && (
             <Form.Item label={`${locale.selector}:`} {...formItemLayout}>
               <Input.TextArea

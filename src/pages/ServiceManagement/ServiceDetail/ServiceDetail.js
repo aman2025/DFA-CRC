@@ -141,21 +141,6 @@ class ServiceDetail extends React.Component {
             <FormItem label={`${locale.groupName}:`}>
               <Input value={service.groupName} readOnly />
             </FormItem>
-            <FormItem label={`${locale.protectThreshold}:`}>
-              <Input value={service.protectThreshold} readOnly />
-            </FormItem>
-            <FormItem label={`${locale.metadata}:`}>
-              <MonacoEditor
-                language="json"
-                width={'100%'}
-                height={200}
-                value={metadataText}
-                options={MONACO_READONLY_OPTIONS}
-              />
-            </FormItem>
-            <FormItem label={`${locale.type}:`}>
-              <Input value={selector.type} readOnly />
-            </FormItem>
             {service.type === 'label' && (
               <FormItem label={`${locale.selector}:`}>
                 <Input value={selector.selector} readOnly />
