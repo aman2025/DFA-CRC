@@ -117,6 +117,22 @@ class App extends React.Component {
     this.props.changeLanguage(language);
   }
 
+  // 关闭浏览器，清空token，重新登录
+  componentWillMount() {
+    window.addEventListener('beforeunload', this.beforeunload); // 拦截判断是否离开当前页面
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.beforeunload); // 销毁拦截判断是否离开当前页面
+  }
+
+  beforeunload(e) {
+    window.localStorage.clear();
+    // let confirmationMessage = '你确定离开此页面吗?';
+    // (e || window.event).returnValue = confirmationMessage;
+    // return confirmationMessage;
+  }
+
   get router() {
     return (
       <HashRouter>
