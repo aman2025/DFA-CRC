@@ -16,7 +16,7 @@
 
 import axios from 'axios';
 import qs from 'qs';
-import { Message } from '@alifd/next';
+import { Message, Dialog } from '@alifd/next';
 import { browserHistory } from 'react-router';
 import { isPlainObject } from './nacosutil';
 // import { SUCCESS_RESULT_CODE } from '../constants';
@@ -37,7 +37,7 @@ const request = () => {
     config => {
       const { url, params, data, method, headers } = config;
       if (!params) {
-				config.params = {};
+        config.params = {};
       }
       if (!url.includes('auth/users/login')) {
         let token = {};
@@ -77,11 +77,18 @@ const request = () => {
         const { data = {}, status } = error.response;
         let message = `HTTP ERROR: ${status}`;
         if (typeof data === 'string') {
-					message = data;
+          message = data;
         } else if (typeof data === 'object') {
           message = data.message;
         }
-        message.indexOf('exist') === -1 && Message.error(message);
+        if (message.indexOf('expired') === -1) {
+          message.indexOf('exist') === -1 && Message.error(message);
+        } else {
+          let lang = localStorage.docsite_language; // 登录超时用Dialog样式，
+          Dialog.alert({
+            title: lang !== 'en-US' ? '登录超时！' : 'token expired!',
+          });
+        }
         if (
           [401, 403].includes(status) &&
           ['unknown user!', 'token invalid!', 'token expired!'].includes(message)
