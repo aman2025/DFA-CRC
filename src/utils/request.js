@@ -81,14 +81,16 @@ const request = () => {
         } else if (typeof data === 'object') {
           message = data.message;
         }
-        if (message.indexOf('expired') === -1) {
+        // 登录过期或关闭浏览器后重新加载url，不弹出Message
+        if (!['unknown user!', 'token expired!'].includes(message)) {
           message.indexOf('exist') === -1 && Message.error(message);
-        } else {
+        } else if (['token expired!'].includes(message)) {
           let lang = localStorage.docsite_language; // 登录超时用Dialog样式，
           Dialog.alert({
             title: lang !== 'en-US' ? '登录超时！' : 'token expired!',
           });
         }
+
         if (
           [401, 403].includes(status) &&
           ['unknown user!', 'token invalid!', 'token expired!'].includes(message)

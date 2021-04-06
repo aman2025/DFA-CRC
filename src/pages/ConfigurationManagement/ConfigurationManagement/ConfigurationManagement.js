@@ -301,6 +301,10 @@ class ConfigurationManagement extends React.Component {
         this.setState({
           loading: false,
         });
+        // 关闭浏览器后，重新加载上一个url，不弹出dialog
+        if (['unknown user!'].includes(res.data.message)) {
+          return;
+        }
         if (res.data.message.indexOf('expired') == -1) {
           if (res && [401, 403].includes(res.status)) {
             Dialog.alert({
