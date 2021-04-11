@@ -42,10 +42,10 @@ class NewRole extends React.Component {
   };
 
   state = {
-		dataSource: [],
-		pageNo: 1,
-		pageSize: 100
-	};
+    dataSource: [],
+    pageNo: 1,
+    pageSize: 100,
+  };
 
   check() {
     const { locale } = this.props;
@@ -72,22 +72,22 @@ class NewRole extends React.Component {
         this.setState({ dataSource: val });
       });
     }
-	};
+  };
 
-	getUsers() {
+  getUsers() {
     const { pageNo, pageSize } = this.state;
     this.props
       .getUsers({ pageNo, pageSize })
-      .then((res) => {
-				const { pageItems } = res.data;
+      .then(res => {
+        const { pageItems } = res.data;
         this.setState({ dataSource: pageItems.map(item => item.username) });
       })
       .catch();
-	}
+  }
 
-	componentDidMount() {
+  componentDidMount() {
     this.getUsers();
-	}
+  }
 
   render() {
     const { locale } = this.props;
@@ -101,15 +101,13 @@ class NewRole extends React.Component {
           onOk={() => {
             const vals = this.check();
             if (vals) {
-              onOk([...vals, locale.addRoleSuccessed]).then(
-								(res) => {
-									if (res.status === 400) {
-										Dialog.alert({ content: locale.bindUserToRoleFail });
-									} else {
-										onCancel();
-									}
-								}
-							);
+              onOk([...vals, locale.addRoleSuccessed]).then(res => {
+                if (res.status === 400) {
+                  Dialog.alert({ content: locale.bindUserToRoleFail });
+                } else {
+                  onCancel();
+                }
+              });
             }
           }}
           onClose={onCancel}
@@ -118,7 +116,7 @@ class NewRole extends React.Component {
         >
           <Form style={{ width: 400 }} {...formItemLayout} field={this.field}>
             <FormItem label={locale.role} required help={getError('role')}>
-              <Input name="role" trim placeholder={locale.rolePlaceholder} />
+              <Input name="role" trim placeholder={locale.rolePlaceholder} maxLength={50} />
             </FormItem>
             <FormItem label={locale.username} required help={getError('username')}>
               <Select
