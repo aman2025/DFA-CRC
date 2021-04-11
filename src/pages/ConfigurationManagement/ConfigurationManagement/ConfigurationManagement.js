@@ -301,14 +301,16 @@ class ConfigurationManagement extends React.Component {
         this.setState({
           loading: false,
         });
-        if (res && [401, 403].includes(res.status)) {
-          Dialog.alert({
-            title: locale.authFail,
-            content: locale.getNamespace403.replace(
-              '${namespaceName}',
-              this.state.nownamespace_name
-            ),
-          });
+        if (res.data.message.indexOf('expired') == -1) {
+          if (res && [401, 403].includes(res.status)) {
+            Dialog.alert({
+              title: locale.authFail,
+              content: locale.getNamespace403.replace(
+                '${namespaceName}',
+                this.state.nownamespace_name
+              ),
+            });
+          }
         }
       });
   }
