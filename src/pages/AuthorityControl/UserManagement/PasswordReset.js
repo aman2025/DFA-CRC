@@ -16,7 +16,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field, Form, Input, Dialog, ConfigProvider } from '@alifd/next';
+import { Field, Form, Input, Dialog, ConfigProvider, Message } from '@alifd/next';
 import './UserManagement.scss';
 
 const FormItem = Form.Item;
@@ -38,14 +38,18 @@ class PasswordReset extends React.Component {
     username: PropTypes.string,
     onCancel: PropTypes.func,
     onOk: PropTypes.func,
+    isFromHeader: PropTypes.bool, // 判断调用此页面的入口页面，是否显示旧密码
   };
 
   check() {
-    const { locale } = this.props;
+    const { locale, isFromHeader } = this.props;
     const errors = {
       password: locale.passwordError,
       rePassword: locale.rePasswordError,
     };
+    if (isFromHeader) {
+      Object.assign(errors, { oldPassword: locale.oldPasswordError });
+    }
     const vals = Object.keys(errors).map(key => {
       const val = this.field.getValue(key);
       if (!val) {
@@ -53,7 +57,7 @@ class PasswordReset extends React.Component {
       }
       return val;
     });
-    if (vals.filter(v => v).length !== 2) {
+    if (vals.filter(v => v).length !== (isFromHeader ? 3 : 2)) {
       return null;
     }
     const [password, rePassword] = ['password', 'rePassword'].map(k => this.field.getValue(k));
@@ -61,13 +65,13 @@ class PasswordReset extends React.Component {
       this.field.setError('rePassword', locale.rePasswordError2);
       return null;
     }
-    return [this.props.username, ...vals];
+    return [this.props.username, ...vals]; // 注意oldPassword在数组在最后
   }
 
   render() {
     const { locale } = this.props;
     const { getError } = this.field;
-    const { username, onOk, onCancel } = this.props;
+    const { username, onOk, onCancel, isFromHeader } = this.props;
     return (
       <>
         <Dialog
@@ -76,7 +80,16 @@ class PasswordReset extends React.Component {
           onOk={() => {
             const vals = this.check();
             if (vals) {
-              onOk([...vals, locale.passwordResetSuccessed]).then(() => onCancel());
+              onOk([...vals, locale.passwordResetSuccessed]).then(res => {
+                if (res.code === 401) {
+                  // message: Old password is invalid
+                  Message.error({
+                    content: locale.oldPasswordInvalid,
+                  });
+                } else {
+                  onCancel();
+                }
+              });
             }
           }}
           onClose={onCancel}
@@ -87,6 +100,17 @@ class PasswordReset extends React.Component {
             <FormItem label={locale.username} required>
               <p>{username}</p>
             </FormItem>
+            {isFromHeader ? (
+              <FormItem label={locale.oldPassword} required help={getError('oldPassword')}>
+                <Input
+                  name="oldPassword"
+                  htmlType="password"
+                  placeholder={locale.passwordPlaceholder}
+                />
+              </FormItem>
+            ) : (
+              ''
+            )}
             <FormItem label={locale.password} required help={getError('password')}>
               <Input name="password" htmlType="password" placeholder={locale.passwordPlaceholder} />
             </FormItem>

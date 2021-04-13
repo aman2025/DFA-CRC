@@ -18,15 +18,17 @@ import { Dialog, Message } from '@alifd/next';
 import request from '../utils/request';
 import { UPDATE_USER, SIGN_IN, USER_LIST, ROLE_LIST, PERMISSIONS_LIST } from '../constants';
 
-const	successMsgOfCustom = (res, localName) => { // 成功提示中英文
-	if (res.code === 200) {
-		Message.success(localName);
-	}
-	return res;
+const successMsgOfCustom = (res, localName) => {
+  // 成功提示中英文
+  if (res.code === 200) {
+    Message.success(localName);
+  }
+  return res;
 };
 
-const	errorMsgOfCustom = (res) => { // 失败提示中英文
-	return res;
+const errorMsgOfCustom = res => {
+  // 失败提示中英文
+  return res;
 };
 
 const initialState = {
@@ -57,7 +59,6 @@ const successMsg = res => {
   return res;
 };
 
-
 /**
  * 用户列表
  * @param {*} params
@@ -70,7 +71,10 @@ const getUsers = params => dispatch =>
  * @param {*} param0
  */
 const createUser = ([username, password, repeatpsw, localeName]) =>
-  request.post('v1/auth/users', { username, password }).then(res => successMsgOfCustom(res, localeName)).catch(res => errorMsgOfCustom(res));
+  request
+    .post('v1/auth/users', { username, password })
+    .then(res => successMsgOfCustom(res, localeName))
+    .catch(res => errorMsgOfCustom(res));
 
 /**
  * 通过username 模糊匹配
@@ -84,14 +88,27 @@ const searchUsers = username =>
  * @param {*} username
  */
 const deleteUser = ([username, localeName]) =>
-  request.delete('v1/auth/users', { params: { username } }).then(res => successMsgOfCustom(res, localeName));
+  request
+    .delete('v1/auth/users', { params: { username } })
+    .then(res => successMsgOfCustom(res, localeName));
 
 /**
  * 重置密码
  * @param {*} param0
  */
 const passwordReset = ([username, newPassword, repeatpsw, localeName]) =>
-  request.put('v1/auth/users', { username, newPassword }).then(res => successMsgOfCustom(res, localeName));
+  request
+    .put('v1/auth/users', { username, newPassword })
+    .then(res => successMsgOfCustom(res, localeName));
+
+/**
+ * 重置密码-有旧密码
+ * @param {*} param0
+ */
+const passwordResetWithOld = ([username, newPassword, repeatpsw, oldPassword, localeName]) =>
+  request
+    .post('v1/auth/password', { oldPassword, newPassword })
+    .then(res => successMsgOfCustom(res, localeName));
 
 /**
  * 角色列表
@@ -113,14 +130,19 @@ const searchRoles = role =>
  * @param {*} param0
  */
 const createRole = ([role, username, localeName]) =>
-  request.post('v1/auth/roles', { role, username }).then(res => successMsgOfCustom(res, localeName)).catch(res => errorMsgOfCustom(res));
+  request
+    .post('v1/auth/roles', { role, username })
+    .then(res => successMsgOfCustom(res, localeName))
+    .catch(res => errorMsgOfCustom(res));
 
 /**
  * 删除角色
  * @param {*} param0
  */
 const deleteRole = ([role, localeName]) =>
-  request.delete('v1/auth/roles', { params: role }).then(res => successMsgOfCustom(res, localeName));
+  request
+    .delete('v1/auth/roles', { params: role })
+    .then(res => successMsgOfCustom(res, localeName));
 
 /**
  * 权限列表
@@ -136,14 +158,19 @@ const getPermissions = params => dispatch =>
  * @param {*} param0
  */
 const createPermission = ([role, resource, action, localeName]) =>
-  request.post('v1/auth/permissions', { role, resource, action }).then(res => successMsgOfCustom(res, localeName)).catch(res => errorMsgOfCustom(res));
+  request
+    .post('v1/auth/permissions', { role, resource, action })
+    .then(res => successMsgOfCustom(res, localeName))
+    .catch(res => errorMsgOfCustom(res));
 
 /**
  * 删除权限
  * @param {*} param0
  */
 const deletePermission = ([permission, localeName]) =>
-  request.delete('v1/auth/permissions', { params: permission }).then(res => successMsgOfCustom(res, localeName));
+  request
+    .delete('v1/auth/permissions', { params: permission })
+    .then(res => successMsgOfCustom(res, localeName));
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -164,6 +191,7 @@ export {
   createUser,
   deleteUser,
   passwordReset,
+  passwordResetWithOld,
   searchRoles,
   getRoles,
   createRole,

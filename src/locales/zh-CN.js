@@ -582,6 +582,9 @@ const I18N_CONF = {
     rePasswordError: '确认密码不能为空!',
     rePasswordError2: '两次输入密码不一致!',
     passwordResetSuccessed: '密码重置成功!',
+    oldPasswordError: '旧密码不能为空！',
+    oldPassword: '旧密码',
+    oldPasswordInvalid: '旧密码错误',
   },
   RolesManagement: {
     roleManagement: '角色管理',

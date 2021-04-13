@@ -22,7 +22,7 @@ import { ConfigProvider, Dropdown, Menu } from '@alifd/next';
 import siteConfig from '../config';
 import { changeLanguage } from '@/reducers/locale';
 import PasswordReset from '../pages/AuthorityControl/UserManagement/PasswordReset';
-import { passwordReset } from '../reducers/authority';
+import { passwordResetWithOld } from '../reducers/authority';
 
 import './index.scss';
 
@@ -40,7 +40,7 @@ class Header extends React.Component {
     changeLanguage: PropTypes.func,
   };
 
-  state = { passwordResetUser: '' };
+  state = { passwordResetUser: '', isFromHeader: true };
 
   switchLang = () => {
     const { language = 'en-US', changeLanguage } = this.props;
@@ -86,7 +86,7 @@ class Header extends React.Component {
       location: { pathname },
     } = this.props;
     const { home, docs, blog, community, languageSwitchButton } = locale;
-    const { passwordResetUser = '' } = this.state;
+    const { passwordResetUser = '', isFromHeader } = this.state;
     const BASE_URL = `https://nacos.io/${language.toLocaleLowerCase()}/`;
     const NAV_MENU = [
       { id: 1, title: home, link: BASE_URL },
@@ -123,11 +123,12 @@ class Header extends React.Component {
         <PasswordReset
           username={passwordResetUser}
           onOk={user =>
-            passwordReset(user).then(res => {
+            passwordResetWithOld(user).then(res => {
               return res;
             })
           }
           onCancel={() => this.setState({ passwordResetUser: undefined })}
+          isFromHeader={isFromHeader}
         />
       </>
     );
