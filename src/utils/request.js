@@ -83,7 +83,10 @@ const request = () => {
         }
         // 登录过期或关闭浏览器后重新加载url，不弹出Message
         if (!['unknown user!', 'token expired!'].includes(message)) {
-          message.indexOf('exist') === -1 && Message.error(message);
+          if (message.indexOf('ROLE_ADMIN') === -1) {
+            // 绑定角色【ROLE_ADMIN】，页面提示建议去掉上方的英文
+            message.indexOf('exist') === -1 && Message.error(message);
+          }
         } else if (['token expired!'].includes(message)) {
           let lang = localStorage.docsite_language; // 登录超时用Dialog样式，
           Dialog.alert({
