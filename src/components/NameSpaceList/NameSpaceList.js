@@ -127,7 +127,7 @@ class NameSpaceList extends React.Component {
   }
 
   handleNameSpaces(data) {
-    const nownamespace = getParams('namespace') || '';
+    const nownamespace = data.length ? data[0].namespace : getParams('namespace') || ''; // 如果没有public空间，默认选中第一个命名空间
 
     // let namespaceShowName = this._namespaceShowName || data[0].namespaceShowName || '';
     window.namespaceList = data;
