@@ -30,7 +30,11 @@ const formItemLayout = {
 };
 
 // eslint-disable-next-line max-len
-@connect(state => ({ namespaces: state.namespace.namespaces }), { getNamespaces, searchRoles, getRoles })
+@connect(state => ({ namespaces: state.namespace.namespaces }), {
+  getNamespaces,
+  searchRoles,
+  getRoles,
+})
 @ConfigProvider.config
 class NewPermissions extends React.Component {
   static displayName = 'NewPermissions';
@@ -49,9 +53,9 @@ class NewPermissions extends React.Component {
 
   // state = {
   //   dataSource: [],
-	// };
+  // };
 
-	constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       dataSource: [],
@@ -61,18 +65,16 @@ class NewPermissions extends React.Component {
   }
 
   componentDidMount() {
-		this.props.getNamespaces();
-		this.getRoles();
-	}
+    this.props.getNamespaces();
+    this.getRoles();
+  }
 
-	getRoles() {
-		const { pageNo, pageSize } = this.state;
-    this.props
-      .getRoles({ pageNo, pageSize })
-      .then((res) => {
-        this.setState({ dataSource: res.data.pageItems });
-      });
-	}
+  getRoles() {
+    const { pageNo, pageSize } = this.state;
+    this.props.getRoles({ pageNo, pageSize }).then(res => {
+      this.setState({ dataSource: res.data.pageItems });
+    });
+  }
 
   check() {
     const { locale } = this.props;
@@ -112,16 +114,14 @@ class NewPermissions extends React.Component {
           visible={visible}
           onOk={() => {
             const vals = this.check();
-						if (vals) {
-              onOk([...vals, locale.addPermissionsSuccessed]).then(
-								(res) => {
-									if (res.status === 400) {
-										Dialog.alert({ content: locale.rolePermission });
-									} else {
-										onCancel();
-									}
-								}
-							);
+            if (vals) {
+              onOk([...vals, locale.addPermissionsSuccessed]).then(res => {
+                if (res.status === 400) {
+                  Dialog.alert({ content: locale.rolePermission });
+                } else {
+                  onCancel();
+                }
+              });
             }
           }}
           onClose={onCancel}
@@ -130,17 +130,11 @@ class NewPermissions extends React.Component {
         >
           <Form style={{ width: 400 }} {...formItemLayout} field={this.field}>
             <FormItem label={locale.role} required help={getError('role')}>
-							<Select
-  name="role"
-  placeholder={locale.rolePlaceholder}
-  style={{ width: '100%' }}
-							>
-                {this.state.dataSource.map((role) => (
-                  <Option value={role.role}>
-                    {role.role}
-                  </Option>
+              <Select name="role" placeholder={locale.rolePlaceholder} style={{ width: '100%' }}>
+                {this.state.dataSource.map(role => (
+                  <Option value={role.role}>{role.role}</Option>
                 ))}
-       </Select>
+              </Select>
             </FormItem>
 
             <FormItem label={locale.resource} required help={getError('resource')}>
@@ -162,8 +156,8 @@ class NewPermissions extends React.Component {
                 placeholder={locale.actionPlaceholder}
                 style={{ width: '100%' }}
               >
-                <Option value="r">{locale.readOnly}(r)</Option>
-                <Option value="w">{locale.writeOnly}(w)</Option>
+                {/* <Option value="r">{locale.readOnly}(r)</Option>
+                <Option value="w">{locale.writeOnly}(w)</Option> */}
                 <Option value="rw">{locale.readWrite}(rw)</Option>
               </Select>
             </FormItem>
