@@ -105,28 +105,25 @@ class NameSpaceList extends React.Component {
 
   getNameSpaces() {
     const { locale = {} } = this.props;
-    if (window.namespaceList && window.namespaceList.length) {
-      this.handleNameSpaces(window.namespaceList);
-    } else {
-      request({
-        type: 'get',
-        url: 'v1/console/namespaces',
-        success: res => {
-          if (res.code === 200) {
-            this.handleNameSpaces(res.data);
-          } else {
-            Dialog.alert({
-              title: locale.notice,
-              content: res.message,
-            });
-          }
-        },
-        error: () => {
-          window.namespaceList = [];
-          this.handleNameSpaces(window.namespaceList);
-        },
-      });
-    }
+    request({
+      type: 'get',
+      url: 'v1/console/namespaces/user',
+      // url: 'v1/console/namespaces',
+      success: res => {
+        if (res.code === 200) {
+          this.handleNameSpaces(res.data);
+        } else {
+          Dialog.alert({
+            title: locale.notice,
+            content: res.message,
+          });
+        }
+      },
+      error: () => {
+        window.namespaceList = [];
+        this.handleNameSpaces(window.namespaceList);
+      },
+    });
   }
 
   handleNameSpaces(data) {
