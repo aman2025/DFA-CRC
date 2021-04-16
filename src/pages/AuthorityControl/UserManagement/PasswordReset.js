@@ -60,9 +60,7 @@ class PasswordReset extends React.Component {
     if (vals.filter(v => v).length !== (isFromHeader ? 3 : 2)) {
       return null;
     }
-    const [password, rePassword, oldPassword] = ['password', 'rePassword', 'oldPassword'].map(k =>
-      this.field.getValue(k)
-    );
+    const [password, rePassword, oldPassword] = ['password', 'rePassword', 'oldPassword'].map(k => this.field.getValue(k));
     if (password !== rePassword) {
       this.field.setError('rePassword', locale.rePasswordError2);
       return null;
