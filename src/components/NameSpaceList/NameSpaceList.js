@@ -127,16 +127,23 @@ class NameSpaceList extends React.Component {
   }
 
   handleNameSpaces(data) {
-    const nownamespace = data.length ? data[0].namespace : getParams('namespace') || ''; // 如果没有public空间，默认选中第一个命名空间
+    // 点击详情返回后，切换菜单时 url的namespace 和 localstore中的只不一样
+    let nownamespace = localStorage.getItem('namespace') || '';
 
     // let namespaceShowName = this._namespaceShowName || data[0].namespaceShowName || '';
     window.namespaceList = data;
     window.nownamespace = nownamespace;
     let namespaceShowName = '';
+    // 切换菜单getParams中的namespace是空，点详情返回有值
     for (let i = 0; i < data.length; i++) {
       if (data[i].namespace === nownamespace) {
-        ({ namespaceShowName } = data[i]);
+        ({ namespaceShowName } = data[i]); // 如果nownamespace为空，取data中的public，
         break;
+      } else {
+        if (nownamespace === '' && data[i].namespace !== '') {
+          ({ namespace: nownamespace } = data[0]);
+        }
+        ({ namespaceShowName } = data[0]);
       }
     }
     window.namespaceShowName = namespaceShowName;
