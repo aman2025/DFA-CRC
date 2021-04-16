@@ -65,8 +65,7 @@ class PasswordReset extends React.Component {
       this.field.setError('rePassword', locale.rePasswordError2);
       return null;
     }
-    if (password === oldPassword) {
-      // 新密码不能与旧密码一样
+    if (password === oldPassword) { // 新密码不能与旧密码一样
       this.field.setError('rePassword', locale.oldPasswordEqualNew);
       return null;
     }
