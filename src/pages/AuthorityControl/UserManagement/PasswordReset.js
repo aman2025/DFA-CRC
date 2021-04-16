@@ -60,11 +60,19 @@ class PasswordReset extends React.Component {
     if (vals.filter(v => v).length !== (isFromHeader ? 3 : 2)) {
       return null;
     }
-    const [password, rePassword] = ['password', 'rePassword'].map(k => this.field.getValue(k));
+    const [password, rePassword, oldPassword] = ['password', 'rePassword', 'oldPassword'].map(k =>
+      this.field.getValue(k)
+    );
     if (password !== rePassword) {
       this.field.setError('rePassword', locale.rePasswordError2);
       return null;
     }
+    if (password === oldPassword) {
+      // 新密码不能与旧密码一样
+      this.field.setError('rePassword', locale.oldPasswordEqualNew);
+      return null;
+    }
+
     return [this.props.username, ...vals]; // 注意oldPassword在数组在最后
   }
 
