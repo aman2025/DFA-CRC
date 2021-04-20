@@ -132,7 +132,7 @@ class NewPermissions extends React.Component {
             <FormItem label={locale.role} required help={getError('role')}>
               <Select name="role" placeholder={locale.rolePlaceholder} style={{ width: '100%' }}>
                 {this.state.dataSource.map(role => (
-                  <Option value={role.role}>{role.role}</Option>
+                  role.role !== 'ROLE_ADMIN' && <Option value={role.role}>{role.role}</Option>
                 ))}
               </Select>
             </FormItem>

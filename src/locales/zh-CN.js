@@ -610,7 +610,7 @@ const I18N_CONF = {
     rolePlaceholder: '请输入角色名',
     usernameError: '用户名不能为空！',
     roleError: '角色名不能为空!',
-    bindUserToRoleFail: '用户绑定到角色的信息已存在!',
+    bindUserToRoleFail: '不允许绑定到ROLE_ADMIN角色!',
     addRoleSuccessed: '添加角色成功!',
   },
   PermissionsManagement: {
