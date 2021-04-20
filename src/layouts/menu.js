@@ -74,10 +74,10 @@ export default function(model) {
       ],
     },
     globalAdmin ? authorityControlMenu : undefined,
-    {
+    globalAdmin ? {
       key: 'namespace',
       url: '/namespace',
-    },
+    } : undefined,
     {
       key: 'clusterManagementVirtual',
       children: [
