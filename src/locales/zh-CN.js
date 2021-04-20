@@ -437,6 +437,7 @@ const I18N_CONF = {
     load: '命名空间名称',
     namespace: '命名空间不能为空',
     namespaceDesc: '命名空间描述不能为空',
+    namespacedescTooLong: '命名空间描述不能超过150',
     description: '描述',
     norepeat: '命名空间名称不能重复',
   },

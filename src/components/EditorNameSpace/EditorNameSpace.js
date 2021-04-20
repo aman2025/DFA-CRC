@@ -213,6 +213,10 @@ class EditorNameSpace extends React.Component {
                   {...this.field.init('namespaceDesc', {
                     rules: [
                       { required: true, message: locale.namespaceDesc },
+                      {
+                        maxLength: 150,
+                        message: locale.namespacedescTooLong,
+                      },
                       { validator: this.validateChart.bind(this) },
                     ],
                   })}

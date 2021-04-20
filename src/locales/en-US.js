@@ -439,6 +439,7 @@ const I18N_CONF = {
     load: 'Namespace',
     namespace: 'Namespace cannot be empty',
     namespaceDesc: 'Namespace description cannot be empty',
+    namespacedescTooLong: 'Namespace description length cannot exceed 150',
     description: 'Description',
     norepeat: 'Duplicate namespace. Please enter a different name.',
   },
