@@ -506,8 +506,8 @@ const I18N_CONF = {
     namespacedescTooLong: 'Namespace description length cannot exceed 150',
     description: 'Description',
     namespaceIdAlreadyExist: 'namespaceId already exist',
-    newnamespceFailedMessage:
-      'namespaceId format is incorrect/namespaceId length greater than 36/namespaceId already exist',
+    newnamespceFailedMessage: 'namespaceId format is incorrect/namespaceId length greater than 36/namespaceId already exist',
+    norepeatId: 'Prohibit create namespaceId named public',
   },
   NameSpaceList: {
     notice: 'Notice',

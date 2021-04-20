@@ -505,6 +505,7 @@ const I18N_CONF = {
     description: '描述',
     namespaceIdAlreadyExist: '命名空间ID已存在',
     newnamespceFailedMessage: '命名空间Id格式不正确/命名空间Id长度大于36/命名空间Id已存在',
+    norepeatId: '禁止创建名称为public的命名空间ID',
   },
   NameSpaceList: {
     notice: '提示',

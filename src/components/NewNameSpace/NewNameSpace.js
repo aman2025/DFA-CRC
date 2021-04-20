@@ -113,6 +113,10 @@ class NewNameSpace extends React.Component {
         disabled: true,
       });
       let { customNamespaceId } = values;
+      if (customNamespaceId.indexOf('public') !== -1) {
+        Dialog.alert({ content: locale.norepeatId });
+        return;
+      }
       if (!customNamespaceId) {
         customNamespaceId = '';
       }
