@@ -502,6 +502,7 @@ const I18N_CONF = {
     customNamespaceIdPlaceholder: 'Please enter the namespace ID (Chinese is not allowed)',
     namespacenotnull: 'Namespace cannot be empty',
     namespacedescnotnull: 'Namespace description cannot be empty',
+    namespacedescTooLong: 'Namespace description length cannot exceed 150',
     description: 'Description',
     namespaceIdAlreadyExist: 'namespaceId already exist',
     newnamespceFailedMessage:

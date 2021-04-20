@@ -500,6 +500,7 @@ const I18N_CONF = {
     customNamespaceIdPlaceholder: '请输入命名空间ID(不允许用中文)',
     namespacenotnull: '命名空间不能为空',
     namespacedescnotnull: '命名空间描述不能为空',
+    namespacedescTooLong: '命名空间描述不能超过150',
     description: '描述',
     namespaceIdAlreadyExist: '命名空间ID已存在',
     newnamespceFailedMessage: '命名空间Id格式不正确/命名空间Id长度大于36/命名空间Id已存在',

@@ -291,6 +291,10 @@ class NewNameSpace extends React.Component {
                         required: true,
                         message: locale.namespacedescnotnull,
                       },
+                      {
+                        maxLength: 150,
+                        message: locale.namespacedescTooLong,
+                      },
                       { validator: this.validateChart.bind(this) },
                     ],
                   })}
