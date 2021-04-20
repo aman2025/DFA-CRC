@@ -53,6 +53,8 @@ class ListeningToQuery extends React.Component {
       pageSize: 10,
       currentPage: 1,
       dataSource: [],
+      ipDataSource: [],
+      ipTotal: 0
     };
     this.field = new Field(this);
     this.group = getParams('group') || '';
@@ -108,6 +110,7 @@ class ListeningToQuery extends React.Component {
       success(data) {
         if (data.collectStatus === 200) {
           const dataSoureTmp = [];
+          const ipDataSoureTmp = [];
           const status = data.lisentersGroupkeyStatus;
           for (const key in status) {
             if (type === 1) {
@@ -121,12 +124,14 @@ class ListeningToQuery extends React.Component {
               const obj = {};
               obj.ip = key;
               obj.md5 = status[key];
-              dataSoureTmp.push(obj);
+              ipDataSoureTmp.push(obj);
             }
           }
           self.setState({
             dataSource: dataSoureTmp || [],
             total: dataSoureTmp.length || 0,
+            ipDataSource: ipDataSoureTmp || [],
+            ipTotal: ipDataSoureTmp.length || 0,
           });
         }
       },
@@ -281,7 +286,7 @@ class ListeningToQuery extends React.Component {
               }}
             >
               {locale.queryResultsQuery}
-              <strong style={{ fontWeight: 'bold' }}> {this.state.total} </strong>
+              <strong style={{ fontWeight: 'bold' }}> {this.getValue('type') === 1 ? this.state.total : this.state.ipTotal} </strong>
               {locale.articleMeetRequirementsConfiguration}
             </h3>
           </div>
@@ -300,7 +305,7 @@ class ListeningToQuery extends React.Component {
                 </Table>
               ) : (
                 <Table
-                  dataSource={this.state.dataSource}
+                  dataSource={this.state.ipDataSource}
                   fixedHeader
                   maxBodyHeight={400}
                   locale={{ empty: locale.pubNoData }}
