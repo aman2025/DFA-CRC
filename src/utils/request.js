@@ -85,7 +85,13 @@ const request = () => {
         if (!['unknown user!', 'token expired!'].includes(message)) {
           if (message.indexOf('ROLE_ADMIN') === -1) {
             // 绑定角色【ROLE_ADMIN】，页面提示建议去掉上方的英文
-            message.indexOf('exist') === -1 && Message.error(message);
+            if (message.indexOf('exist') === -1) {
+              if (['caused: cannot delete admin: shinecrc;'].includes(message)) {
+                Message.error('不能删除shinecrc用户！');
+              } else {
+                Message.error(message);
+              }
+            }
           }
         } else if (['token expired!'].includes(message)) {
           let lang = localStorage.docsite_language; // 登录超时用Dialog样式，
