@@ -125,13 +125,13 @@ class ServiceDetail extends React.Component {
             >
               {locale.back}
             </Button>
-            <Button
+            {/* <Button
               type="normal"
               className="header-btn"
               onClick={() => this.openEditServiceDialog()}
             >
               {locale.editService}
-            </Button>
+            </Button> */}
           </h1>
 
           <Form {...pageFormLayout}>
