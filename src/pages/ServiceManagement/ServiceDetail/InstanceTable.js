@@ -153,13 +153,13 @@ class InstanceTable extends React.Component {
             width={160}
             cell={(value, index, record) => (
               <div>
-                <Button
+                {/* <Button
                   type="normal"
                   className="edit-btn"
                   onClick={() => this.openInstanceDialog(record)}
                 >
                   {locale.editor}
-                </Button>
+                </Button> */}
                 <Button
                   type={record.enabled ? 'normal' : 'secondary'}
                   onClick={() => this.switchState(index, record)}

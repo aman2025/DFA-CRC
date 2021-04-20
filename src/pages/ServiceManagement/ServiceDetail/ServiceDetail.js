@@ -154,11 +154,11 @@ class ServiceDetail extends React.Component {
               title={`${locale.cluster}:`}
               subTitle={cluster.name}
               contentHeight="auto"
-              extra={
-                <Button type="normal" onClick={() => this.openClusterDialog(cluster)}>
-                  {locale.editCluster}
-                </Button>
-              }
+              // extra={
+              //   <Button type="normal" onClick={() => this.openClusterDialog(cluster)}>
+              //     {locale.editCluster}
+              //   </Button>
+              // }
             >
               <InstanceTable
                 clusterName={cluster.name}
