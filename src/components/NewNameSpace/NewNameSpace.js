@@ -200,7 +200,7 @@ class NewNameSpace extends React.Component {
       callback();
     } else {
       const { locale = {} } = this.props;
-      if (value.length > 128) {
+      if (value.length > 36) {
         callback(locale.namespaceIdTooLong);
       }
       const chartReg = /^[\w-]+/g;
@@ -274,7 +274,7 @@ class NewNameSpace extends React.Component {
                         message: locale.namespacenotnull,
                       },
                       {
-                        maxLength: 118,
+                        maxLength: 36,
                         message: locale.namespaceTooLong,
                       },
                       { validator: this.validateChart.bind(this) },

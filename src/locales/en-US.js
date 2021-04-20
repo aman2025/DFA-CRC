@@ -496,8 +496,8 @@ const I18N_CONF = {
     loading: 'Loading...',
     name: 'Namespace',
     namespaceId: 'Namespace ID',
-    namespaceIdTooLong: 'The namespace ID length cannot exceed 128',
-    namespaceTooLong: 'The namespace length cannot exceed 118',
+    namespaceIdTooLong: 'The namespace ID length cannot exceed 36',
+    namespaceTooLong: 'The namespace length cannot exceed 36',
     customNamespaceIdnull: 'The namespace ID cannot be empty',
     customNamespaceIdPlaceholder: 'Please enter the namespace ID (Chinese is not allowed)',
     namespacenotnull: 'Namespace cannot be empty',
@@ -505,7 +505,7 @@ const I18N_CONF = {
     description: 'Description',
     namespaceIdAlreadyExist: 'namespaceId already exist',
     newnamespceFailedMessage:
-      'namespaceId format is incorrect/namespaceId length greater than 128/namespaceId already exist',
+      'namespaceId format is incorrect/namespaceId length greater than 36/namespaceId already exist',
   },
   NameSpaceList: {
     notice: 'Notice',
@@ -588,6 +588,7 @@ const I18N_CONF = {
     oldPasswordError: 'Old password cannot be empty!',
     oldPassword: 'OldPassword',
     oldPasswordInvalid: 'Old password is Invalid',
+    oldPasswordEqualNew: 'New password cannot be the same as old password',
   },
   RolesManagement: {
     roleManagement: 'Role management',
