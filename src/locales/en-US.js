@@ -612,6 +612,7 @@ const I18N_CONF = {
     rolePlaceholder: 'Please Enter Role',
     usernameError: 'User name cannot be empty!',
     roleError: 'Role cannot be empty!',
+    bindUserToRoleFailDefault: 'role already exist!',
     bindUserToRoleFail: 'Prohibit binding ROLE_ADMIN!',
     addRoleSuccessed: 'Role add ok!',
   },

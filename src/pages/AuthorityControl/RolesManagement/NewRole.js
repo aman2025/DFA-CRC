@@ -103,7 +103,11 @@ class NewRole extends React.Component {
             if (vals) {
               onOk([...vals, locale.addRoleSuccessed]).then(res => {
                 if (res.status === 400) {
-                  Dialog.alert({ content: locale.bindUserToRoleFail });
+                  if (vals.includes('ROLE_ADMIN')) {
+                    Dialog.alert({ content: locale.bindUserToRoleFail });
+                  } else {
+                    Dialog.alert({ content: locale.bindUserToRoleFailDefault });
+                  }
                 } else {
                   onCancel();
                 }
