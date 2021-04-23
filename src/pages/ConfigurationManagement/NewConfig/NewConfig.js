@@ -512,13 +512,14 @@ class NewConfig extends React.Component {
 												required: true,
 												message: locale.appNamenull,
 											}],
-									})}
+                  })}
+  maxLength={100}
   readOnly={this.inApp}
 								/>
             </FormItem>
 
             <FormItem label={locale.description}>
-              <Input.TextArea htmlType={'text'} multiple rows={3} {...init('desc')} />
+              <Input.TextArea htmlType={'text'} multiple rows={3} {...init('desc')} maxLength={115} />
             </FormItem>
 
             <FormItem label={locale.targetEnvironment}>
