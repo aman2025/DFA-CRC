@@ -100,13 +100,16 @@ class HistoryRollback extends React.Component {
     if (needclean) {
       this.dataId = '';
       this.group = '';
+      this.preDataId = '';
       this.setState({
         group: '',
         dataId: '',
+        preDataId: '',
       });
       setParams({
         group: '',
         dataId: '',
+        preDataId: '',
       });
     }
 
@@ -176,9 +179,16 @@ class HistoryRollback extends React.Component {
     });
   }
 
+  onDataIdChange(value) {
+    this.dataId = value || '';
+    this.setState({
+      dataId: value || '',
+    });
+  }
+
   selectAll() {
-    this.dataId = this.field.getValue('dataId');
-    this.group = this.field.getValue('group');
+    // this.dataId = this.field.getValue('dataId');
+    // this.group = this.field.getValue('group');
     // if (!this.dataId || !this.group) {
     //   return false;
     // }
@@ -234,8 +244,6 @@ class HistoryRollback extends React.Component {
 
   render() {
     const { locale = {} } = this.props;
-    const { init } = this.field;
-    this.init = init;
     return (
       <div style={{ padding: 10 }}>
         <Loading
@@ -250,19 +258,13 @@ class HistoryRollback extends React.Component {
             namespaceCallBack={this.cleanAndGetData.bind(this)}
           />
           <div>
-            <Form inline field={this.field}>
+            <Form inline>
               <Form.Item label={locale.configId}>
                 <Input
                   placeholder={locale.dataId}
                   style={{ width: 200 }}
-                  {...this.init('dataId', {
-                    rules: [
-                      {
-                        required: false,
-                        message: locale.dataIdCanNotBeEmpty,
-                      },
-                    ],
-                  })}
+                  value={this.state.dataId}
+                  onChange={this.onDataIdChange.bind(this)}
                 />
               </Form.Item>
 

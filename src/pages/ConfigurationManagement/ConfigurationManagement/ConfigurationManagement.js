@@ -1246,10 +1246,11 @@ class ConfigurationManagement extends React.Component {
               <Form inline>
                 <Form.Item label={locale.configId}>
                   <Input
-                    defaultValue={this.dataId}
+                    value={this.dataId}
                     htmlType="text"
                     placeholder={locale.fuzzyd}
                     style={{ width: 200 }}
+                    value={this.state.dataId}
                     onChange={dataId => {
                       this.dataId = dataId;
                       this.setState({ dataId });
