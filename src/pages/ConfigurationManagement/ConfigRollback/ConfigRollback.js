@@ -103,7 +103,7 @@ class ConfigRollback extends React.Component {
     const namespace = getParams('namespace');
     const { serverId, dataId, group } = this;
     this.props.history.push(
-      generateUrl('/historyRollback', { serverId, dataId, group, namespace })
+      generateUrl('/historyRollback', { serverId, namespace })
     );
   }
 
