@@ -156,8 +156,8 @@ class NewPermissions extends React.Component {
                 placeholder={locale.actionPlaceholder}
                 style={{ width: '100%' }}
               >
-                {/* <Option value="r">{locale.readOnly}(r)</Option>
-                <Option value="w">{locale.writeOnly}(w)</Option> */}
+                <Option value="r">{locale.readOnly}(r)</Option>
+                <Option value="w">{locale.writeOnly}(w)</Option>
                 <Option value="rw">{locale.readWrite}(rw)</Option>
               </Select>
             </FormItem>
