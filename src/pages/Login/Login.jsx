@@ -53,6 +53,7 @@ class Login extends React.Component {
       if (errors) {
         return;
       }
+      values.source = 'source';
       login(values)
         .then(res => {
           localStorage.setItem('token', JSON.stringify(res));
