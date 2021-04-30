@@ -105,11 +105,14 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       shownotice: 'none',
       noticecontent: '',
       nacosLoading: {},
     };
+    this._beforeUnload_time = 0;
+    this._gap_time = 0;
   }
 
   componentDidMount() {
@@ -118,19 +121,30 @@ class App extends React.Component {
   }
 
   // 关闭浏览器，清空token，重新登录
+  // 关闭浏览器的事件顺序 先beforeunload，再unload
   componentWillMount() {
-    window.addEventListener('beforeunload', this.beforeunload); // 拦截判断是否离开当前页面
+    window.addEventListener('beforeunload', this.beforeunload.bind(this)); // 拦截判断是否离开当前页面
+    window.addEventListener('unload', this.unload.bind(this)); // 拦截判断是否离开当前页面
   }
 
   componentWillUnmount() {
-    window.removeEventListener('beforeunload', this.beforeunload); // 销毁拦截判断是否离开当前页面
+    window.addEventListener('beforeunload', this.beforeunload.bind(this)); // 拦截判断是否离开当前页面
+    window.addEventListener('unload', this.unload.bind(this)); // 拦截判断是否离开当前页面
   }
 
   beforeunload(e) {
-    window.localStorage.clear();
-    // let confirmationMessage = '你确定离开此页面吗?';
-    // (e || window.event).returnValue = confirmationMessage;
-    // return confirmationMessage;
+    this._beforeUnload_time = new Date().getTime();
+  }
+
+  unload() {
+    this._gap_time = new Date().getTime() - this._beforeUnload_time;
+    console.log(this._gap_time);
+    if (this._gap_time <= 5) {
+      // 时间差小于5，是关闭事件
+      window.localStorage.clear();
+    } else {
+      // 刷新
+    }
   }
 
   get router() {
